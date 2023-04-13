@@ -4,6 +4,7 @@ import 'react-flow-renderer/dist/style.css';
 import { v4 as uuidv4 } from 'uuid';
 import CustomNode from './components/CustomNode';
 import TextUpdaterNode from "./components/TextUpdaterNode";
+import Cavity from "./components/Cavity";
 
 const initialElements = [];
 
@@ -22,7 +23,7 @@ const Toolbar = ({ onAddNode, onAddEdge }) => (
     </div>
 );
 
-const nodeTypes = { textUpdater: TextUpdaterNode };
+const nodeTypes = { textUpdater: TextUpdaterNode, cavity: Cavity };
 
 const App = () => {
     const [nodes, setNodes] = useState([]);
@@ -33,7 +34,7 @@ const App = () => {
         const id = uuidv4();
         const newNode = {
             id,
-            type: 'textUpdater',
+            type: 'cavity',
             data: { label: `Node ${id}` },
             position: { x: 250, y: 250 },
         };
